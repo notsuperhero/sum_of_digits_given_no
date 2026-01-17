@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --bg-color: #242424;
+  --card-bg: #1a1a1a;
+  --text-color: rgba(255, 255, 255, 0.87);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #333;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  border-color: #646cff;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.input-group {
+  margin-bottom: 2rem;
+}
+
+.number-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-color: #2a2a2a;
   color: white;
+  transition: border-color 0.25s;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.number-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(100, 108, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(100, 108, 255, 0.2);
+}
+
+.result-display .label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.result-display .value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.digits-preview {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.digit-pill {
+  background: #333;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: monospace;
+  color: #ccc;
 }
